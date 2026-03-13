@@ -1,0 +1,18 @@
+name: Setup PHP (Static)
+description: Install a statically-compiled PHP binary with a set of commonly used extensions.
+
+inputs:
+  php-version:
+    description: The version of PHP to install.
+    required: true
+  extensions:
+    description: The extension bundle to install (common, bulk, minimal).
+    default: common
+    required: false
+  tools:
+    description: A comma-separate list of tools to install (e.g. "composer")
+    required: false
+
+runs:
+  using: node24
+  main: dist/index.js

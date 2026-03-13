@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "@actions/cache": "^6.0.0",
+        "@actions/core": "^3.0.0",
+        "@actions/github": "^9.0.0",
+        "@actions/io": "^3.0.2",
+        "@actions/tool-cache": "^4.0.0"
+    },
+    "devDependencies": {
+        "@vercel/ncc": "^0.38.4"
+    },
+    "scripts": {
+        "build": "ncc build action.js -o dist"
+    }
+}

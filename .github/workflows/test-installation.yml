@@ -1,0 +1,25 @@
+name: Test PHP installation
+
+on:
+    push:
+    pull_request:
+    workflow_dispatch:
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v6
+
+            - name: Set up PHP
+              uses: ./
+              with:
+                php-version: '8.4'
+                extensions: common
+
+            - name: Verify PHP installation
+              run: |
+                php -v
+                php -m
